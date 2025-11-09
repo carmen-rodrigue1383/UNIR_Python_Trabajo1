@@ -131,6 +131,29 @@ def test_ingresar_calificaciones_calificacion_fuera_rango(mocker):
     assert materias_resultado == ["Matematicas"]
     assert calificaciones_resultado == [8.5]
 
+def test_ingresar_calificaciones_materia_duplicada(mocker):
+    # Configurar los datos de prueba
+    materias = ["Matematicas", "Matematicas", "Fisica", "fin"]
+    calificaciones = ["8.5", "9.0"]  # La segunda materia duplicada no debería pedir calificación
+    
+    # Configurar mocks
+    mock_prompts = mocker.MagicMock()
+    mock_prompts.pedir_materia.side_effect = materias
+    mock_prompts.pedir_calificacion.side_effect = calificaciones
+    
+    mock_mensajes = mocker.MagicMock()
+    
+    mocker.patch.object(cp, "prompts", mock_prompts)
+    mocker.patch.object(cp, "mensajes", mock_mensajes)
+
+    materias_resultado, calificaciones_resultado = cp.ingresar_calificaciones()
+    
+    # Verificar que se muestra el mensaje de materia duplicada
+    mock_mensajes.mensaje_materia_duplicada.assert_called_once_with("Matematicas")
+    # Verificar que se guardan los datos correctos sin duplicados
+    assert materias_resultado == ["Matematicas", "Fisica"]
+    assert calificaciones_resultado == [8.5, 9.0]
+
 def test_determinar_estado(mocker):
     calificaciones = [4.5, 9.5, 7.25, 8]
     aprobadas, reprobadas = cp.determinar_estado(calificaciones, umbral=5.0)
