@@ -3,7 +3,7 @@
 ## Descripción
 Calculadora de promedios para calificaciones académicas.
 
-- [Enunciado](./enunciado.md) 
+- [Enunciado del ejercicio](./enunciado.md) 
 - [Solución](./solucion.md)
 
 ## Estructura
@@ -17,11 +17,16 @@ src/
 ```
 
 ## Uso
+
+### Instala dependencias
+```cmd
+pip install pytest pytest-cov
+```
+### Ejecutar la calculadora 
 ```cmd
 python src/calculadora_promedios.py
 ```
-
-## Test
+### Test
 ```cmd
 pytest tests/
 ```
