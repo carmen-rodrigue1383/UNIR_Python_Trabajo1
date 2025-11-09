@@ -42,7 +42,7 @@ conda activate unir_trabajo1
 
 ### 4. Instala las dependencias
 ```cmd
-pip install pytest pytest-cov
+pip install pytest pytest-cov pytest-mock
 ```
 
 ## Ejecutar la calculadora
