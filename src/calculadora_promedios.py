@@ -2,10 +2,7 @@ import prompts
 import mensajes_usuario as mensajes
 import reports
 from constants import CALIFICACION_MINIMA, CALIFICACION_MAXIMA, UMBRAL_APROBACION
-
-class CalificacionInvalida(Exception):
-    """Excepción personalizada para calificaciones fuera del rango permitido [0-10]"""
-    pass
+from exceptions import CalificacionInvalida
 
 def ingresar_calificaciones():
     """Permite al usuario introducir el nombre de una materia y su calificación correspondiente
@@ -28,6 +25,9 @@ def ingresar_calificaciones():
                 break
             else:
                 continue
+        elif(materia_o_fin.strip() in materias):
+            mensajes.mensaje_materia_duplicada(materia_o_fin.strip())
+            continue
         elif(materia_o_fin.strip().lower() == 'fin'):
             break
         else:
