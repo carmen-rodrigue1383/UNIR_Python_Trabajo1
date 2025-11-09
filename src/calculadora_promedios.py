@@ -107,6 +107,10 @@ def encontrar_extremos(calificaciones):
         return { "mayor": indice_mayor, "menor": indice_menor } 
         
 def main():
+    """Función principal que orquesta la entrada de datos, el cálculo de promedios,
+    la determinación de materias aprobadas y reprobadas, la identificación de extremos,
+    y la generación del reporte final.
+    """    
     materias, calificaciones = ingresar_calificaciones()
 
     if(materias == [] or calificaciones == []):
