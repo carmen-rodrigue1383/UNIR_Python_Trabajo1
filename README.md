@@ -36,7 +36,7 @@ O descarga el ZIP desde GitHub y extrae la carpeta.
 
 ### 3. (Opcional) Crea un entorno virtual
 ```cmd
-conda create -n unir_trabajo1 python=3.10
+conda create -n unir_trabajo1 python=3.8
 conda activate unir_trabajo1
 ```
 
