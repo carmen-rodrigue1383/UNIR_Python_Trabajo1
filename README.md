@@ -1,7 +1,7 @@
 # Calculadora de Promedios
 
 ## Descripción
-Calculadora de promedios para calificaciones académicas.
+Este proyecto es una calculadora de promedios académicos desarrollada como parte del Trabajo 1 del "Curso de Programación en Python" en UNIR.
 
 - [Enunciado del ejercicio](./enunciado.md) 
 - [Solución](./solucion.md)
@@ -16,17 +16,40 @@ src/
 └── reports.py              # Generación de reportes
 ```
 
-## Uso
+## 🚀 Cómo empezar desde cero
 
-### Instala dependencias
+### 1. Instala Anaconda (recomendado para principiantes)
+
+🔗 [Descargar Anaconda](https://www.anaconda.com/products/distribution)
+
+Anaconda incluye Python, Jupyter y muchas librerías útiles. Es la forma más fácil de empezar sin complicaciones.
+
+### 2. Clona o descarga el repositorio
+
+Desde Anaconda Prompt o tu terminal:
+
+```cmd
+git clone https://github.com/carmen-rodrigue1383/UNIR_Python_Trabajo1.git
+cd UNIR_Python_Trabajo1
+```
+O descarga el ZIP desde GitHub y extrae la carpeta.
+
+### 3. (Opcional) Crea un entorno virtual
+```cmd
+conda create -n unir_trabajo1 python=3.10
+conda activate unir_trabajo1
+```
+
+### 4. Instala las dependencias
 ```cmd
 pip install pytest pytest-cov
 ```
-### Ejecutar la calculadora 
+
+## Ejecutar la calculadora
 ```cmd
 python src/calculadora_promedios.py
 ```
-### Test
+## Ejecutar los test
 ```cmd
 pytest tests/
 ```
